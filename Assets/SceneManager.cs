@@ -12,15 +12,14 @@ namespace SceneManager
 			DataView
 		};
 
-		[SerializeField]
-		State state = State.Login;
+		readonly State state = State.DataView;
 
 		public delegate void StateChange(State target);
 		public static event StateChange OnStateChanged;
 
 		private void Start()
 		{
-			OnStateChanged.Invoke(state);
+			OnStateChanged.Invoke(State.Login);
 			//LocalizationSettings.SelectedLocale = UserLocale; //API CALL
 		}
 
