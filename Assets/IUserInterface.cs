@@ -8,16 +8,16 @@ namespace SceneManager
 	public class IUserInterface : SceneManager
 	{
 
-		private State previous;
+		private GameObject loginScreen;
 
 		private void Start()
 		{
 			OnStateChanged += ChangeState;
+			loginScreen = Resources.Load<GameObject>("UI/Login");
 		}
 
 		private void ChangeState(State state)
 		{
-			if (previous == state) { return; }
 			switch (state)
 			{
 				case State.Login:
@@ -27,7 +27,6 @@ namespace SceneManager
 					ShowDataView();
 					break;
 			}
-			previous = state;
 		}
 
 		[SerializeField]
@@ -36,12 +35,12 @@ namespace SceneManager
 			Debug.Log("Interface - Data");
 		}
 
+
+		[SerializeField]
 		private void ShowLoginView()
 		{
-			if (Application.isPlaying)
-			{
-
-			}
+			if (loginScreen == null) { return; }
+			Instantiate(loginScreen).SetActive(true);
 			Debug.Log("Interface - Login");
 		}
 
