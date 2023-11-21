@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class LocalizationManager : MonoBehaviour
+
+namespace SceneManager
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public class SceneManager : MonoBehaviour
+	{
+		public enum State
+		{
+			Login,
+			DataView
+		};
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+		[SerializeField]
+		State state = State.Login;
+
+		public delegate void StateChange(State target);
+		public static event StateChange OnStateChanged;
+
+		private void Start()
+		{
+			OnStateChanged.Invoke(state);
+			//LocalizationSettings.SelectedLocale = UserLocale; //API CALL
+		}
+
+	}
 }
