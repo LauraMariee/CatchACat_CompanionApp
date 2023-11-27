@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 333513640}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &333513643
@@ -378,8 +378,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1359757635}
-  - component: {fileID: 1359757634}
-  - component: {fileID: 1359757636}
+  - component: {fileID: 1359757637}
+  - component: {fileID: 1359757638}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -387,18 +387,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1359757634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359757633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcbef2b41100f9f41badb3ec3ba667fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1359757635
 Transform:
   m_ObjectHideFlags: 0
@@ -414,7 +402,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1359757636
+--- !u!114 &1359757637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359757633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcbef2b41100f9f41badb3ec3ba667fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLoginSucessful: 0
+--- !u!114 &1359757638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -426,3 +427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ecb10e28a9f6041a88f408a745f140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLoginSucessful: 0
+  loginScreen: {fileID: 3959057729338400886, guid: 0dfd12fe8c2c59940b71dd027f58ee82,
+    type: 3}

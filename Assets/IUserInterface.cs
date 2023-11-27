@@ -7,13 +7,12 @@ namespace SceneManager
 {
 	public class IUserInterface : SceneManager
 	{
-
+		[SerializeField]
 		private GameObject loginScreen;
 
 		private void Start()
 		{
-			OnStateChanged += ChangeState;
-			loginScreen = Resources.Load<GameObject>("UI/Login");
+			SceneManager.OnStateChanged += ChangeState;
 		}
 
 		private void ChangeState(State state)
@@ -46,7 +45,7 @@ namespace SceneManager
 
 		private void OnDestroy()
 		{
-			OnStateChanged -= ChangeState;
+			SceneManager.OnStateChanged -= ChangeState;
 		}
 
 	}

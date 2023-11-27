@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7417558948684092292}
   - component: {fileID: 8989122285304444213}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: usernamePlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 8706276556987449833}
   - component: {fileID: 2151109185936831439}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: passwordPlacholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,9 +533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304e6c73e8adb364e824a45749981517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 5287294001086598690}
-  username: 
-  password: 
 --- !u!1 &4175919153392537254
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +867,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8566578649300655257}
-        m_TargetAssemblyTypeName: LoginLogic, Assembly-CSharp
+        m_TargetAssemblyTypeName: SceneManager.LoginLogic, Assembly-CSharp
         m_MethodName: CheckLogin
         m_Mode: 1
         m_Arguments:

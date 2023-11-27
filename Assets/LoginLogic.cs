@@ -1,35 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class LoginLogic : MonoBehaviour
+
+namespace SceneManager
 {
-	[SerializeField, HideInInspector]
-	private string username;
-	[SerializeField, HideInInspector]
-	private string password;
-
-	private void Start()
+	public class LoginLogic : SceneManager
 	{
-		//username = GameObject.Find("Username/TextArea/Placeholder");
-	}
+		private string username;
+		private string password;
 
-	// Update is called once per frame
-	public void CheckLogin()
-	{
-		Debug.Log("LoginLogic - CheckLogin");
-		IsCorrectLogin();
-	}
-
-	private bool IsCorrectLogin()
-	{
-		if (username.Equals(true) && password.Equals(true))
+		private void Start()
 		{
-			return true;
 		}
-		return false;
-	}
+
+		public void CheckLogin()
+		{
+			if(IsCorrectLogin())
+			{
+				state = State.DataView;
+				UpdateState();
+				Debug.Log("Update data view");
+			}
+		}
+
+		private bool IsCorrectLogin()
+		{
+			username = GameObject.Find("usernamePlaceholder").GetComponent<TextMeshProUGUI>().text;
+			password = GameObject.Find("passwordPlacholder").GetComponent<TextMeshProUGUI>().text;
+
+			if (username == "admin" && password == "password")
+			{
+				Debug.Log("Correct");
+				return true;
+				
+			}
+			Debug.Log("False");
+			Debug.Log(username + " " + password);
+			return false;
+		}
+}
+
 }

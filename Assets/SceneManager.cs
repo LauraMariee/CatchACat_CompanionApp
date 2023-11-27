@@ -1,5 +1,5 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 
 namespace SceneManager
@@ -12,7 +12,7 @@ namespace SceneManager
 			DataView
 		};
 
-		readonly State state = State.DataView;
+		public static State state;
 
 		public delegate void StateChange(State target);
 		public static event StateChange OnStateChanged;
@@ -21,6 +21,11 @@ namespace SceneManager
 		{
 			OnStateChanged.Invoke(State.Login);
 			//LocalizationSettings.SelectedLocale = UserLocale; //API CALL
+		}
+
+		public void UpdateState()
+		{
+			OnStateChanged.Invoke(state);
 		}
 
 	}
